@@ -1,0 +1,33 @@
+.pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px dotted blue;
+}
+
+.feed {
+  width: 450px;
+
+  &:first-child {
+    padding-top: 32px;
+  }
+}
+
+.feedImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.align-btn {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.right {
+  right: -1%;
+}

@@ -1,0 +1,108 @@
+<div class="flex full-height flex-justify-content-spacebtw">
+  <!-- Side Nav Bar -->
+  <nav
+    class="flex flex-col flex-justify-content-spacebtw flex-align-items-start full-height padding-12"
+  >
+    <div class="flex flex-col flex-align-items-start">
+      <button mat-button class="full-width flex-justify-items-left">
+        <mat-icon
+          svgIcon="Logo"
+          aria-hidden="false"
+          aria-label="Instagram Logo"
+          class="logo"
+        ></mat-icon>
+      </button>
+
+      <button mat-button class="full-width flex-justify-items-left">
+        <mat-icon
+          svgIcon="Home"
+          aria-hidden="false"
+          aria-label="Instagram Logo"
+        ></mat-icon>
+        Home
+      </button>
+
+      <button mat-button class="full-width flex-justify-items-left">
+        <mat-icon
+          svgIcon="Search"
+          aria-hidden="false"
+          aria-label="Search"
+        ></mat-icon>
+        Search
+      </button>
+
+      <a
+        mat-button
+        routerLink="/reels"
+        class="full-width flex-justify-items-left"
+      >
+        <mat-icon
+          svgIcon="Reels"
+          aria-hidden="false"
+          aria-label="Reels"
+        ></mat-icon>
+        Reels
+      </a>
+
+      <a
+        mat-button
+        routerLink="/direct/inbox"
+        class="full-width flex-justify-items-left"
+      >
+        <mat-icon
+          svgIcon="Messenger"
+          aria-hidden="false"
+          aria-label="Messages"
+        ></mat-icon>
+        Messages
+      </a>
+
+      <button mat-button class="full-width flex-justify-items-left">
+        <mat-icon
+          svgIcon="ActivityFeed"
+          aria-hidden="false"
+          aria-label="Notifications"
+        ></mat-icon>
+        Notifications
+      </button>
+
+      <button mat-button class="full-width flex-justify-items-left">
+        <mat-icon
+          svgIcon="NewPosts"
+          aria-hidden="false"
+          aria-label="Create"
+        ></mat-icon>
+        Create
+      </button>
+
+      <a
+        mat-button
+        routerLink="/${userName}"
+        class="full-width flex-justify-items-left"
+      >
+        <mat-icon
+          svgIcon="Profile"
+          aria-hidden="false"
+          aria-label="Profile"
+        ></mat-icon>
+        Profile
+      </a>
+    </div>
+
+    <button mat-button class="full-width flex-justify-items-left">
+      <mat-icon> menu </mat-icon>
+      More
+    </button>
+  </nav>
+
+  <!-- Stories and Feeds -->
+  <section class="flex flex-col">
+    <app-stories></app-stories>
+    <app-feeds></app-feeds>
+  </section>
+
+  <!-- Connection Suggestion -->
+  <aside>
+    <h1>temp</h1>
+  </aside>
+</div>

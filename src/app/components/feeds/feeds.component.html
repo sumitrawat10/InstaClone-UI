@@ -1,0 +1,66 @@
+<div class="feed margin-auto">
+  <ng-container *ngFor="let feed of feedList">
+    <div>
+      <!-- Profile Photo, User Name, Location and Option -->
+      <div class="flex flex-justify-content-spacebtw">
+        <div class="flex">
+          <div class="flex flex-align-items-center padding-4">
+            <img [src]="feed.profile_photo" alt="" class="pic" />
+          </div>
+          <div>
+            <div>
+              <strong>
+                <a>{{ feed.user_id }}</a>
+              </strong>
+              <time [dateTime]="feed.uploadTime | relativeTime"></time>
+            </div>
+            <div>
+              {{ feed.location.place }}, {{ feed.location.city }},
+              {{ feed.location.country }}
+            </div>
+          </div>
+        </div>
+        <div>
+          <button mat-icon-button><mat-icon>more_horiz</mat-icon></button>
+        </div>
+      </div>
+
+      <!-- All the photos/videos in the feed -->
+      <div class="pos-relative">
+        <button
+          disableRipple
+          mat-icon-button
+          class="align-btn"
+          (click)="previousFeedImage()"
+        >
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <div class="flex overflow-scroll hide-scollbar" #horzImageScroll>
+          <ng-container *ngFor="let image of feed.feeds">
+            <img
+              [src]="image.source"
+              [alt]="image.alt"
+              class="feedImage"
+              #imagehehe
+            />
+          </ng-container>
+        </div>
+        <button
+          disableRipple
+          mat-icon-button
+          class="align-btn right"
+          (click)="nextFeedImage()"
+        >
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+
+      <!-- Like, Comment, Share & Add to Collection -->
+      <div class="flex flex-justify-spacebtw">
+        <div class="flex"></div>
+      </div>
+
+      <!-- Likes Count -->
+    </div>
+  </ng-container>
+</div>

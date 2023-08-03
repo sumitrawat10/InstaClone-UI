@@ -1,0 +1,20 @@
+@import "../../../styles.scss";
+
+.login-form {
+  width: $login-form-width;
+}
+
+.user-detail-form > * {
+  width: $user-detail-form-width;
+  button {
+    border-radius: $button-border-radius;
+  }
+}
+
+.showPasswordBtn {
+  display: inline;
+}
+
+.or-box {
+  width: $user-detail-form-width;
+}

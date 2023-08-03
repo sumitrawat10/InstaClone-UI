@@ -1,0 +1,111 @@
+<article class="flex flex-row pos-abs vp-center-middle">
+  <div>
+    <div
+      class="flex flex-col flex-align-items-center login-form thin-border padding-tb-16"
+    >
+      <div
+        aria-label="Instagram"
+        role="img"
+        class="insta-logo cursor-pointer"
+      ></div>
+      <form
+        [formGroup]="sign_in_details"
+        class="flex flex-col flex-align-items-center user-detail-form"
+        (ngSubmit)="onSignIn()"
+      >
+        <mat-form-field>
+          <mat-label>Phone number, Username or Email</mat-label>
+          <input matInput type="text" formControlName="user_id" />
+          <mat-error
+            *ngIf="sign_in_details.controls.user_id.hasError('required')"
+            >Email is required
+          </mat-error>
+          <mat-error
+            *ngIf="
+              sign_in_details.controls.user_id.hasError('userNameNotAvailable')
+            "
+            >User Name not Available
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+          />
+          <button
+            matSuffix
+            mat-icon-button
+            (click)="toggleShowPassword()"
+            [hidden]="!sign_in_details.controls.password.value"
+          >
+            <mat-icon>
+              {{ showPassword ? "visibility_off" : "visibility" }}
+            </mat-icon>
+          </button>
+          <mat-error
+            *ngIf="sign_in_details.controls.password.hasError('required')"
+            >Password is required
+          </mat-error>
+          <mat-error
+            *ngIf="sign_in_details.controls.password.hasError('minlength')"
+          >
+            Min. of 8 character are required
+          </mat-error>
+          <mat-error
+            *ngIf="sign_in_details.controls.password.hasError('uppercase')"
+          >
+            Atleast 1 uppercase character is required.
+          </mat-error>
+          <mat-error
+            *ngIf="sign_in_details.controls.password.hasError('lowercase')"
+          >
+            Atleast 1 lowercase character is required.
+          </mat-error>
+          <mat-error
+            *ngIf="sign_in_details.controls.password.hasError('numeric')"
+          >
+            Atleast 1 numberic character is required.
+          </mat-error>
+          <mat-error
+            *ngIf="sign_in_details.controls.password.hasError('special')"
+          >
+            Atleast 1 special character is required.
+          </mat-error>
+        </mat-form-field>
+        <button
+          type="submit"
+          color="primary"
+          mat-raised-button
+          [disabled]="sign_in_details.invalid"
+        >
+          Log In
+        </button>
+      </form>
+      <div class="flex padding-top-16 or-box">
+        <hr class="flex-grow-1 margin-auto" />
+        <div class="padding-lr-12">OR</div>
+        <hr class="flex-grow-1 margin-auto" />
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-align-items-center login-form thin-border padding-tb-16 margin-tb-16"
+    >
+      <div>
+        Don't have an account ?
+        <strong><a href=""> Sign up </a></strong>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <mat-form-field>
+    <mat-select [(value)]="selectedLanguage">
+      <mat-option *ngFor="let language of languageList" [value]="language">
+        {{ language }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</footer>

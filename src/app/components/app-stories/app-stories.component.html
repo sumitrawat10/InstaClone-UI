@@ -1,0 +1,20 @@
+<div class="flex flex-align-items-center">
+  <!-- TODO: Disabled the button when no space is there to move left-->
+  <button disableRipple mat-icon-button (click)="scrollLeft()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <!-- TODO: remove fix-width hard coded value and set it to some percentage -->
+  <div
+    class="flex padding-top-16 fix-width hide-scollbar overflow-scroll"
+    #horzStoryList
+  >
+    <div *ngFor="let story of stories" class="padding-lr-8">
+      <img height="60px" width="60px" [src]="story.profile_photo" alt="temp" />
+      <p>{{ story.user_id }}</p>
+    </div>
+  </div>
+  <!-- TODO: Disabled the button when no space is there to move right-->
+  <button disableRipple mat-icon-button (click)="scrollRight()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>
